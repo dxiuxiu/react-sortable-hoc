@@ -38,13 +38,14 @@ const umdConfig = ({minify} = {}) => ({
   external: ['react', 'react-dom', 'prop-types'],
   output: {
     name: 'SortableHOC',
-    file: minify ? pkg["umd:main"].replace('.js', '.min.js') : pkg["umd:main"],
+    file: minify ? pkg['umd:main'].replace('.js', '.min.js') : pkg['umd:main'],
     format: 'umd',
     globals: {
       react: 'React',
       'react-dom': 'ReactDOM',
       'prop-types': 'PropTypes',
     },
+    sourcemap: true,
   },
   plugins: [
     resolve(),
@@ -59,7 +60,7 @@ const umdConfig = ({minify} = {}) => ({
       ),
     }),
     commonjs(),
-    minify ? uglify() : { },
+    minify ? uglify() : {},
     filesize(),
   ],
 });
