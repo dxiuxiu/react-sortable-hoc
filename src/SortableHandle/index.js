@@ -27,6 +27,7 @@ export default function sortableHandle(
     wrappedInstance = React.createRef();
 
     render() {
+      console.log('sortableHandle');
       const ref = config.withRef ? this.wrappedInstance : null;
 
       return <WrappedComponent ref={ref} {...this.props} />;

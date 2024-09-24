@@ -1046,6 +1046,7 @@ export default function sortableContainer(
     render() {
       const ref = config.withRef ? this.wrappedInstance : null;
 
+      console.log('render');
       return (
         <SortableContext.Provider value={this.sortableContextValue}>
           <WrappedComponent ref={ref} {...omit(this.props, omittedProps)} />
